@@ -3,11 +3,11 @@
     class TelegramMessenger extends IPSModule {
  
         public function __construct($InstanceID) {
-            // Diese Zeile nicht löschen
+            // Diese Zeile nicht lÃ¶schen
             parent::__construct($InstanceID);
         }
  
-        // Überschreibt die interne IPS_Create($id) Funktion
+        // Ãœberschreibt die interne IPS_Create($id) Funktion
         public function Create() {
             parent::Create();                       
 			$this->RegisterPropertyString("BotID", "123456789:JHJ56HJJHJ78778JKLKJKLJ8798JHJahjhw");
@@ -16,20 +16,20 @@
 			$this->RegisterPropertyBoolean("ProcessIncoming", false);
 			$this->RegisterPropertyInteger ("ProcessIncomingSkript", 0);
 			$this->RegisterPropertyBoolean("HTML", false);
-			$this->RegisterTimer("GetUpdates", 15000, 'Telegram_GetUpdates($_IPS[\'TARGET\']);');
+			$this->RegisterTimer("GetUpdates", 5000, 'Telegram_GetUpdates($_IPS[\'TARGET\']);');
 		}
 		
 		
-        // Überschreibt die intere IPS_ApplyChanges($id) Funktion
+        // Ãœberschreibt die intere IPS_ApplyChanges($id) Funktion
         public function ApplyChanges() {
-            // Diese Zeile nicht löschen
+            // Diese Zeile nicht lÃ¶schen
             parent::ApplyChanges();
 
         }
  
         /**
-        * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
-        * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
+        * Die folgenden Funktionen stehen automatisch zur VerfÃ¼gung, wenn das Modul Ã¼ber die "Module Control" eingefÃ¼gt wurden.
+        * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur VerfÃ¼gung gestellt:
         *
         * ABC_MeineErsteEigeneFunktion($id);
         *
@@ -119,7 +119,7 @@
 					$date = $telegram->Date();
 					$firstname = $telegram->FirstName();
 					IPS_LogMessage("Telegram", "Update von " . $chat_id . " -> " . $text . " / " . $date . " / " . print_r($telegram,true));
-					// Verarbeiten von Nachrichten (aber nur wenn aktiviert und Nachricht nicht älter als 1 Minute);
+					// Verarbeiten von Nachrichten (aber nur wenn aktiviert und Nachricht nicht Ã¤lter als 1 Minute);
 					if ($this->ReadPropertyBoolean("ProcessIncoming") && (time() - $date) < 60) {
 						// Ist der User bekannt?
 						$recips = explode(",",$this->ReadPropertyString("Recipients"));
