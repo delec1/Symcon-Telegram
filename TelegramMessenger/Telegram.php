@@ -628,7 +628,7 @@ class Telegram {
         }
         // message is containing no text (e.g. picture sent)
         else {
-            $returnValue = "";
+            $returnValue = "Foto";
         }
         return $returnValue;
     }
